@@ -12,11 +12,11 @@ N 과 M
 """
 
 
+n, m = map(int, input().split())
+card = list(map(int, input().split()))
 
-count, sumnumber = map(int, input().split())
-card = map(int, input().split())
-
-
+print(n,m)
+print(card)
 
 
 
