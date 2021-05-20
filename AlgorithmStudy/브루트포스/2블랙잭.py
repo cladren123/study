@@ -9,14 +9,41 @@
 N장의 카드에 써져 있는 숫자가 주어졌을 때, M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 구해 출력하시오.
 
 N 과 M
+
+N개 중 3개를 골라 M에 최대한 근접한 것을 출력
 """
 
 
 n, m = map(int, input().split())
 card = list(map(int, input().split()))
 
-print(n,m)
-print(card)
+used = [0] * 3
+visited = [0] * n
 
+answer = []
+allsum1 = 0
+
+def solve(stage) :
+    global allsum1
+    if stage == 3 :
+        for i in used :
+           allsum1 = allsum1 + card[i]
+        if allsum1 <= m :
+            answer.append(allsum1)
+        allsum1 = 0
+        return
+
+    for i in range(n) :
+        if stage > 0 and i <= used[stage-1] :
+            continue
+        if visited[i] == 0 :
+            visited[i] = 1
+            used[stage] = i
+            solve(stage + 1)
+            visited[i] = 0
+
+solve(0)
+
+print(max(answer))
 
 
