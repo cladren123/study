@@ -1,12 +1,5 @@
 
+tmp = list(map(int, input().split()))
+res = [tmp[i:i+3] for i in range(0,16,3)]
 
-# list1 = [1,1,1]
-#
-# list2 = set(list1)
-#
-# print(list2)
-#
-# print(len(list2))
-
-for i in range(7,0,-1) :
-    print(i)
+print(res)
