@@ -37,3 +37,5 @@ for tc in range(4) :
     answer.append(ans)
 
 print(*answer)
+
+#
