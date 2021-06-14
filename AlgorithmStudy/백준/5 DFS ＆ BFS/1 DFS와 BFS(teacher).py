@@ -51,7 +51,7 @@ while queue :
 visited2 = [0] * (n+1)
 
 queue1 = deque()
-queue.append((3,0))
+queue1.append((3,0))
 visited2[v] = 1
 
 while queue1 :
