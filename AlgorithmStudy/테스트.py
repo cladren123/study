@@ -1,6 +1,7 @@
 
-list1 = ['621', '1010', '77777']
-print(list1)
 
-list1.sort(reverse=True)
+list1 = ['ACB', 'SFO']
+
+list1.sort()
+
 print(list1)
