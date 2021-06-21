@@ -45,9 +45,7 @@ def solution(genres, plays):
         bigo.append((noraesum,i))
 
     bigo.sort(reverse=True)
-
-    # print(bigo)
-
+    print(bigo)
     for i, genre in bigo :
         if len(norae.get(genre)) >= 2 :
             for j in range(2):
