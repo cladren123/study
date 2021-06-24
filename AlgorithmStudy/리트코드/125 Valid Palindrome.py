@@ -25,3 +25,4 @@ def isPalindrome(s) :
     return answer
 
 isPalindrome(s)
+
