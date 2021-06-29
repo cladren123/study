@@ -27,7 +27,7 @@ Z -> N : 12
 
 # name = "JEROEN"
 # name = "JAN"
-name = "ABAAAAAAAAABB"
+name = "ABBAAAAAAAAAB"
 # name = "JAZ"
 
 def solution(name):
@@ -53,7 +53,7 @@ def solution(name):
 
     # print(answer)
 
-    # print(visited1)
+    print(visited1)
 
     leftstart = 0
     rightstart = 0
@@ -86,15 +86,10 @@ def solution(name):
         else :
             rightstart = leftstart
             visited1[leftstart] = 1
-
-
-
         guri += anv
 
     print(guri)
-
     answer += guri
-
     print(answer)
 
     return answer
