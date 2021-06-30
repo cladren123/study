@@ -28,8 +28,6 @@ def solution(number, k):
     n = len(number)
     check = [0]
 
-
-
     for i in range(n) :
         num = int(number[i])
         j = -1
@@ -46,17 +44,14 @@ def solution(number, k):
                     if check[j] >= num :
                         check.append(num)
                         break
-
             elif check[j] >= num :
                 check.append(num)
-
     while newk :
         del check[-1]
         newk -= 1
 
     for i in check :
         answer += str(i)
-
 
     print(answer)
 
