@@ -1,5 +1,8 @@
 
 
-check = [1,2,3,4]
 
-print(check[-1])
+set1 = {0,1}
+
+set1.update({2,3})
+
+print(set1)

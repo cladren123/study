@@ -32,15 +32,15 @@ answr = 8
 """
 from collections import deque
 
-n = 4
-costs = [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]
+# n = 4
+# costs = [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]
 
 
 # n = 5
 # costs = [[0, 1, 1], [3, 4, 1], [1, 2, 2], [2, 3, 4]]
 
-# n = 5
-# costs = [[0, 1, 5], [1, 2, 3], [2, 3, 3], [3, 1, 2], [3, 0, 4], [2, 4, 6], [4, 0, 7]]
+n = 5
+costs = [[0, 1, 5], [1, 2, 3], [2, 3, 3], [3, 1, 2], [3, 0, 4], [2, 4, 6], [4, 0, 7]]
 
 
 
@@ -52,10 +52,12 @@ def solution(n, costs):
     costs.sort(key=lambda x: x[2])
     print(costs)
 
+    # 노드의 탐색 여부
     visited = [0] * n
 
     costn = len(costs)
 
+    # costs 중복 사용 방지
     costvisited = [0] * costn
 
     que = deque()
@@ -72,6 +74,7 @@ def solution(n, costs):
 
         nodelist.append(s)
         nodelist.append(e)
+
         nodelist1 = set(nodelist)
         nodelist = list(nodelist1)
 
@@ -84,7 +87,7 @@ def solution(n, costs):
         else :
             for i in range(1,costn) :
                 if costvisited[i] != 1 :
-                    if costs[i][0] in nodelist or costs[i][0] in nodelist or costs[i][1] in nodelist or costs[i][1] in nodelist :
+                    if costs[i][0] in nodelist or costs[i][1] in nodelist :
                         if costs[i][0] in nodelist and costs[i][1] in nodelist :
                             continue
                         else:
@@ -92,8 +95,6 @@ def solution(n, costs):
                             que.append(costs[i])
                             costvisited[i] = 1
                             break
-
-
 
     print(answer)
     return answer
