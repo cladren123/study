@@ -1,8 +1,5 @@
 
 
 
-set1 = {0,1}
-
-set1.update({2,3})
-
-print(set1)
+list1 = [1,2]
+print(list1.index(3))
