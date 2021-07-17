@@ -92,7 +92,9 @@ def union(x,y) :
     rooty = find(y)
 
     if rootx != rooty :
-        parent[rooty] = rootx
+        for i in range(len(parent)) :
+            if parent[i] == rooty :
+                parent[i] = rootx
         return 1
     else :
         return 0
@@ -124,15 +126,15 @@ if numbercheck == count-1 :
     answer = allcost
 else :
     answer = -1
+#
+# for i in board :
+#     print(i)
 
-for i in board :
-    print(i)
-
-print()
-print(wire)
-print()
-print(parent)
-print(numbercheck)
+# print()
+# print(wire)
+# print()
+# print(parent)
+# print(numbercheck)
 print(answer)
 
 
