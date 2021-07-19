@@ -127,8 +127,8 @@ if numbercheck == count-1 :
 else :
     answer = -1
 #
-# for i in board :
-#     print(i)
+for i in board :
+    print(i)
 
 # print()
 # print(wire)
