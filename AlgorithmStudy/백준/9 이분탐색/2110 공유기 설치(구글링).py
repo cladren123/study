@@ -7,9 +7,8 @@ for _ in range(n):
 
 house.sort()
 
-# 좌표값의 최소값
+# 거리의 최솟값과 최대값
 start = 1
-# 가장 높은 좌표와 가장 낮은 좌표의 차이
 end = house[-1] - house[0]
 
 result = 0
