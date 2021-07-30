@@ -19,7 +19,7 @@ for nanana in range(test) :
         s,e = map(int, input().split())
         nlist[e].append(s)
 
-    # print(nlist)
+    print(nlist)
 
     clist = []
 
@@ -42,8 +42,8 @@ for nanana in range(test) :
     one2 = 0
 
 
-    # print(lastyear1)
-    # print(lastyear)
+    print(lastyear1)
+    print(lastyear)
 
 
     for i in range(1, len(nlist)) :
