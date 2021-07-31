@@ -3,65 +3,57 @@ from collections import deque
 
 input = sys.stdin.readline
 
-# n 건물의 개수, k 건설순서규칙
-n, k = map(int, input().split())
+testcase = int(input())
 
-nlist = [[]  for _ in range(n+1)]
+for _ in range(testcase) :
 
+    n, k = map(int, input().split())
 
-ntime = list(map(int, input().split()))
-ntime.insert(0,0)
+    d = [0] + list(map(int, input().split()))
 
-visited = [0] * (n+1)
+    graph = [[0] * (n+1) for _ in range(n+1)]
+    nd = [0] * (n+1)
 
-for _ in range(k) :
-    s, e = map(int, input().split())
-    nlist[e].append(s)
+    for _ in range(k) :
+        s, e = map(int, input().split())
+        graph[s][e] = 1
+        nd[e] += 1
 
-w = int(input())
+    w = int(input())
 
-print(nlist)
-print(ntime)
+    que = deque()
 
-bt = ntime[w]
-que = deque()
-que.append([w, bt])
+    for i in range(1, n+1 ) :
+        if nd[i] == 0 :
+            que.append(i)
 
+    alist = [0] * (n+1)
 
-answer = 0
+    # for i in graph :
+    #     print(i)
+    # print(nd)
 
-while que :
-    print(que)
-    nowb, bt = que.popleft()
-    print(nowb, bt)
+    while que :
+        cur = que.popleft()
 
+        newbt = 0
+        for i in range(1,n+1) :
+            if graph[i][cur] == 1 :
+                newbt = max(newbt, alist[i])
 
-    if nlist[nowb] == [] :
-        answer = max(answer,bt)
-    else :
-        answer = bt
+        nowbt = newbt + d[cur]
+        alist[cur] = nowbt
 
+        for j in range(1, n+1) :
+            if graph[cur][j] == 1 :
+                nd[j] -= 1
 
-    newbt = 0
-    for i in nlist[nowb] :
-        if visited[i] == 1 :
-            continue
-        else :
-            newbt = max(newbt, ntime[i])
-
-    check = ntime.index(newbt)
-    visited[check] = 1
-
-    bt += newbt
-
-    for i in nlist[nowb] :
-        que.append([i, bt])
+                if nd[j] == 0 :
+                    que.append(j)
 
 
+    print(alist[w])
 
-
-
-print(answer)
 
 
 
