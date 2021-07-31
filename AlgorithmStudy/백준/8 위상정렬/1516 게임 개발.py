@@ -66,7 +66,7 @@ while que :
 # 정답 리스트를 출력한다.
 for i in range(1, n+1) :
     print(alist[i])
-
+0
 
 
 
