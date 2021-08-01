@@ -62,7 +62,7 @@ for _ in range(testcase) :
             if indegree[i] == 0 :
                 p.append(i)
 
-    # *을 쓰면 [] 을 벗어나나 보다. 
+    # *을 쓰면 [] 을 벗어나나 보다.
     if len(ans) == n :
         print(*ans)
     else :
