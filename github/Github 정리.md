@@ -76,6 +76,12 @@ repository의 주소 복사
 
 
 
+### git pull origin master
+
+원격저장소에 파일들을 땡겨온다.
+
+
+
 
 
 
