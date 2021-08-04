@@ -2,6 +2,8 @@ import copy
 import sys
 from collections import deque
 
+
+
 input = sys.stdin.readline
 
 # n 은 세로, m 은 가로
