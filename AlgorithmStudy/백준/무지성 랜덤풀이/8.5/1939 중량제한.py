@@ -44,6 +44,7 @@ while que :
     newvisited1 = copy.deepcopy(one[1])
     newvisited2 = copy.deepcopy(one[1])
 
+    # 피드백 : 답을 찾는 이 부분을 이분탐색으로 찾아서 시간 초과를 줄여야 하나보다.
     if end in one[1] :
         answer = max(answer, cost)
 
