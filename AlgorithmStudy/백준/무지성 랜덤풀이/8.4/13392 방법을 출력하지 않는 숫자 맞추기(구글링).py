@@ -39,7 +39,6 @@ for i in range(1,n+1) :
         lcnt = (after[i] - before[i] - j + 20) % 10
         rcnt = 10 - lcnt
 
-
         dp[i][j] = min(dp[i][j], dp[i-1][j] + rcnt)
         dp[i][(j + lcnt) % 10] = min(dp[i][(j+lcnt) % 10], dp[i-1][j] + lcnt)
 
