@@ -1,6 +1,8 @@
 import sys
 from collections import deque
 
+# 문제유형 : 구현
+
 input = sys.stdin.readline
 
 # n : 세로 크기, m : 가로 크기
