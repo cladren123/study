@@ -59,7 +59,7 @@ for i in range(1,n+1) :
     if visited[i] == 0 :
         bfs(i)
 
-# 답 출력 
+# 답 출력
 print(count)
 
 
