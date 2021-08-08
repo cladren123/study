@@ -67,7 +67,7 @@ while que :
             answerlist[i] = newcount
 
 
-# answerlist의 값을 출력한다. 
+# answerlist의 값을 출력한다.
 for i in range(1,n+1) :
     print(answerlist[i], end = " ")
 
