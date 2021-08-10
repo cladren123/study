@@ -19,6 +19,7 @@ for i in range(2, n+1) :
         heapq.heappush(bigheap, one)
 
 
+    # bigheap 부분이 하나 더 커야 bigheap[0]이 중간값이 된다.
     while len(bigheap) < (i//2)+1 :
         heapq.heappush(bigheap, -heapq.heappop(smallheap))
     while len(smallheap) < i-(i//2)+1 :
