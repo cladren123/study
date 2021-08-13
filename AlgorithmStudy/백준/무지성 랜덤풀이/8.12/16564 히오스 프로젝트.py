@@ -34,19 +34,8 @@ while start <= end :
 
     if k >= res :
         start = mid + 1
+        answer = mid
     else :
         end = mid - 1
 
 print(end)
-
-
-
-
-
-
-
-
-
-
-
-
