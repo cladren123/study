@@ -19,6 +19,7 @@ for i in range(1, n) :
         if graph[j] < graph[i] :
             dp[i] = max(dp[i], dp[j]+1)
 
+print(dp)
 print(max(dp))
 
 
