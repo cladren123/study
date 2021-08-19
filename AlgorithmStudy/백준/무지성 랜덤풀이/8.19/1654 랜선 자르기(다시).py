@@ -43,9 +43,12 @@ while start <= end  :
     # allsum 잘린 랜선의 수
     if allsum >= n :
         start = mid + 1
+        answer = mid
     else :
         end = mid - 1
 
+# = 있는 부분의 미드를 답으로 표시하자.
+print(answer)
 print(end)
 
 

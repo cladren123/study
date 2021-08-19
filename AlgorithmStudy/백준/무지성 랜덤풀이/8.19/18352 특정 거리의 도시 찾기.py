@@ -1,7 +1,7 @@
 
 """
 
-문제 유형 = 다익스트라 알고리즘(?)
+문제 유형 = 다익스트라 알고리즘(?) - 정답
 
 """
 import sys
@@ -31,11 +31,13 @@ for _ in range(m) :
 
 que = deque()
 
-# 출발 도시, 경로이 거리
+# 출발 도시, 경로의 거리
 que.append([x,0])
 visited[x] = 1
 
 answerlist = []
+
+# 최소비용으로 적은 것을 넣어야 한다. - 다익스트라
 
 while que :
     cur, cost = que.popleft()
