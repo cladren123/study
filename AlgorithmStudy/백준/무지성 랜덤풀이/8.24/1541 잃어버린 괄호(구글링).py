@@ -15,7 +15,7 @@ eval 함수
 
 nlist = input().split("-")
 
-answer = int(nlist[0])
+answer = int(eval(nlist[0]))
 
 for i in range(1,len(nlist)) :
     one = eval(nlist[i])
@@ -23,6 +23,9 @@ for i in range(1,len(nlist)) :
     answer -= one
 
 print(answer)
+
+참고사이트
+https://pacific-ocean.tistory.com/228
 
 """
 
