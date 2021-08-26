@@ -70,8 +70,6 @@ def solution(new_id):
 
     answer = one3
 
-
-
     return answer
 
 
