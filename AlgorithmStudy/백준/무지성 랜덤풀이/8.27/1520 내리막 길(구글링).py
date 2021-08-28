@@ -23,37 +23,53 @@ board = []
 for _ in range(m) :
     board.append(list(map(int, input().split())))
 
-visited = [[0] * n for _ in range(m)]
+visited = [[-1] * n for _ in range(m)]
 
 dx = [1,0,-1,0]
 dy = [0,-1,0,1]
 
-que = deque()
-
-que.append([0,0,board[0][0]])
-
 answer = 0
 
-while que :
-    y, x, cur = que.popleft()
+"""
 
+visited
+-1 : 한 번도 가지 않은 지역
+0  : 한 번은 간 지역
+1  : 정답에 도달한 길 
+
+재귀는 너무 어렵다... 
+
+top down 방식 
+
+"""
+
+def dfs(y,x) :
+    if y == m-1 and x == n-1 :
+        return 1
+    if visited[y][x] != -1 :
+        return visited[y][x]
+
+    visited[y][x] = 0
 
     for i in range(4) :
         ny = y + dy[i]
         nx = x + dx[i]
 
         if 0 <= ny < m and 0 <= nx < n :
-            if cur > board[ny][nx] :
-                if visited[ny][nx] == 0 :
-                    que.append([ny,nx,board[ny][nx]])
-                    visited[ny][nx] = 1
+            if board[ny][nx] < board[y][x] :
+                visited[y][x] += dfs(ny,nx)
 
-                    if ny == m-1 and nx == n-1 :
-                        answer += 1
+    return visited[y][x]
 
-                elif visited[ny][nx]
 
-print(answer)
+
+print(dfs(0,0))
+
+for i in visited :
+    print(i)
+
+
+
 
 
 
