@@ -47,15 +47,10 @@ board[sharky][sharkx] = 0
 
 # 성장하기 위해 얼마나 먹었는지 체크
 count = 0
-
 answer = 0
-
-swit = 1
 
 dx = [1,0,-1,0]
 dy = [0,-1,0,1]
-
-
 
 que = deque()
 que.append([sharky,sharkx,0])
@@ -94,6 +89,7 @@ while mint :
 
     if len(hubo) == 0 :
         mint = 0
+
     else :
         hubo.sort(key=lambda x:(x[2], x[0], x[1]))
 
