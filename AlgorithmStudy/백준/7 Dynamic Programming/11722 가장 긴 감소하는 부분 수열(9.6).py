@@ -21,4 +21,6 @@ for i in range(n) :
         if nl[i] < nl[j] :
             dp[i] = max(dp[j] + 1, dp[i])
 
+print(dp)
+
 print(max(dp))
