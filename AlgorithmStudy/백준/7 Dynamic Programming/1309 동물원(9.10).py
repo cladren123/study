@@ -57,20 +57,26 @@ import sys
 
 input = sys.stdin.readline
 
+# n 입력
 n = int(input())
 
+# 조건에 따라 나눌 값을 변수로 선언
 number = 9901
 
+# dp리스트 생성
 dp = [[0] * 2 for _ in range(100001)]
 
+# 초기값 생성
 dp[1][0] = 1
 dp[1][1] = 2
 
+# 점화식 구현
 if n > 1 :
     for i in range(2,n+1) :
         dp[i][0] = (dp[i-1][0] + dp[i-1][1]) % number
         dp[i][1] = ((dp[i-1][0] * 2) + dp[i-1][1]) % number
 
+# 정답 출력
 answer = (dp[n][0] + dp[n][1]) % number
 print(answer)
 
