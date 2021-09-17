@@ -1,18 +1,20 @@
-N, M = map(int, input().split())
-tree = list(map(int, input().split()))
-start, end = 1, max(tree)  # 이분탐색 검색 범위 설정
 
-while start <= end:  # 적절한 벌목 높이를 찾는 알고리즘
-    mid = (start + end) // 2
 
-    log = 0  # 벌목된 나무 총합
-    for i in tree:
-        if i >= mid:
-            log += i - mid
+list1 = [1,2,3]
 
-    # 벌목 높이를 이분탐색
-    if log >= M:
-        start = mid + 1
-    else:
-        end = mid - 1
-print(end)
+list2 = [3,4,5]
+list22 = [3,4,5]
+
+list3 = [6,7,8]
+
+"""
+하나씩 꺼내서 검사하는 수 밖에 없나
+
+"""
+
+print(list2, list22)
+
+print(list1 in list2)
+print(list2 in list22)
+print(list2 not in list22)
+
