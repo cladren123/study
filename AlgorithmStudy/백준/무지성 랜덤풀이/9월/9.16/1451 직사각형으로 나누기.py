@@ -25,23 +25,19 @@ input = sys.stdin.readline
 # n : 세로 m : 가로
 n, m = map(int, input().split())
 
+# 숫자 판 입력
 board = []
-
 for _ in range(n) :
     one = input().strip()
     one = list(map(int, one))
     board.append(one)
-
-# for i in board :
-#     print(i)
 
 answer = 0
 
 # 6개의 경우를 각각 계산하자
 # ▤, ▥, ㅏ,ㅜ,ㅓ,ㅗ
 
-# ▤ 0 ~ i-1, i ~ j-1, j,n-1
-# 0, n-1, m
+# ▤
 for i in range(1,n-1) :
     for j in range(i+1, n) :
         s1 = sum(board[a][b] for a in range(i) for b in range(m))
