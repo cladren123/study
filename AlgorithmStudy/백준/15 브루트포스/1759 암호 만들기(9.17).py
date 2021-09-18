@@ -10,7 +10,7 @@
 
 """
 import sys
-from itertools import permutations, combinations
+from itertools import combinations
 
 input = sys.stdin.readline
 
