@@ -13,7 +13,7 @@ def isPalindrome(s) :
     news = []
 
     for i in s :
-        if 'a' <= i <= 'z' or '0' <= i <= '9' :
+        if 'a' <= i <= 'z' or '0' <= i <= '9.19' :
             news.append(i)
 
     print(news)

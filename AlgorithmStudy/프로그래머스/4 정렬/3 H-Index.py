@@ -26,7 +26,7 @@ def solution(citations):
 
 
 
-# 테스트케이스 9 실패...
+# 테스트케이스 9.19 실패...
 def solution(citations):
     answer = 0
     citations.sort(reverse=True)
