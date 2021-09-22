@@ -22,6 +22,7 @@ n = int(input())
 
 words = []
 
+# 문자열을 받은 것을 리스트로 변환한 다음 리스트에 담는다.
 for _ in range(n) :
     one = input().strip()
     one = list(one)
@@ -44,9 +45,9 @@ for case in words :
 
         ncase -= 1
 
-# print(worddict)
 
 # 자릿값이 높은 순서대로 높은 숫자를 부여한다.
+# 딕셔너리를 value을 기준으로 오름차순으로 정렬한다.
 worddict = dict(sorted(worddict.items(), key = operator.itemgetter(1), reverse=True))
 number = 9
 for i in worddict :
@@ -54,6 +55,7 @@ for i in worddict :
     number -= 1
 
 
+# 단어를 숫자로 변환한 다음 계산한다.
 alist = []
 
 for word in words :
