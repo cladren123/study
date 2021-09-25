@@ -61,6 +61,8 @@ def dfs(stage, number) :
                 visited[i] = 0
 
 
+
+
 dfs(0, "")
 print(maxnumber)
 print(minnumber)
