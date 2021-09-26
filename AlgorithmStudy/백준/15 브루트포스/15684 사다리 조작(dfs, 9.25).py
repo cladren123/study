@@ -6,7 +6,7 @@
 백트래킹
 
 """
-import copy
+
 import sys
 
 input = sys.stdin.readline
@@ -49,6 +49,7 @@ def dfs(stage, idx, linenumber) :
             answer = min(answer, linenumber)
         return
 
+    # 기존에 탐색했던 줄은 탐색하지 않는다. idx
     for i in range(idx,h+1) :
         for j in range(1,n+1) :
             if j+1 < n+1 :
@@ -57,66 +58,12 @@ def dfs(stage, idx, linenumber) :
                     dfs(stage+1, i, linenumber)
                     graph[i][j] = 0
 
-
-
-
+# 0~3까지의 경우의 수를 탐색
 for i in range(4) :
     dfs(0,1,i)
 
+# 정답이 없을 경우 -1로 출력
 if answer == 5 :
     answer = -1
 
 print(answer)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
