@@ -19,14 +19,17 @@ input = sys.stdin.readline
 # n : 수빈 k : 동생
 n, m = map(int, input().split())
 
-
-
+# 최대 크기 변수
 maxnum = 100001
 
-visited = [0] * maxnum
+# x 지점에 도착했을 때 시간을 담을 리스트
 timelist = [-1] * maxnum
 
-# 초기화 하는 과정도 중요하다.
+# x 지점을 방문했는지 표시하는 리스트
+visited = [0] * maxnum
+
+
+# 초기화 하는 과정도 중요하다. -> 하지 않으면 에러 발생
 que = deque()
 que.append(n)
 timelist[n] = 0
@@ -34,7 +37,7 @@ visited[n] = 1
 
 while que :
     loc = que.popleft()
-    # *2 인 경우
+    # *2 인 경우, 시간을 소요하지 않으므로 먼저 탐색하게 만든다.
     if loc*2 < maxnum and visited[loc*2] == 0 :
         timelist[loc*2] = timelist[loc]
         visited[loc*2] = 1

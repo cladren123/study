@@ -21,6 +21,10 @@ for _ in range(m) :
     a, b = map(int, input().split())
     graph[a][b] = 1
 
+for i in graph :
+    print(i)
+
+
 
 # 정답의 조건을 만족하는 확인
 def check() :
