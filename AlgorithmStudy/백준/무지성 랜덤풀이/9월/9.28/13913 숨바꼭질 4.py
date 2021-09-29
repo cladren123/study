@@ -20,16 +20,23 @@ input = sys.stdin.readline
 # n : 수빈, k : 동생
 n, k = map(int, input().split())
 
+# 범위의 가장 큰 수
 maxnum = 100001
 
+# x지점에 도착할 때 최소 시간을 담을 리스트
+# 정답 출력을 위해 -2로 초기화했다.
 timelist = [-2] * maxnum
+
+# 어떤 점에서 넘어왔는지 담을 리스트
 beforelist = [-2] * maxnum
 
+# bfs를 돌리기 위한 que리스트
 que = deque()
 que.append(n)
 beforelist[n] = -1
 timelist[n] = 0
 
+# BFS
 while que :
     now = que.popleft()
 
@@ -37,20 +44,26 @@ while que :
     n2 = now+1
     n3 = now-1
 
-    if n1 < maxnum and timelist[n1] == -2 :
-        timelist[n1] = timelist[now] + 1
-        beforelist[n1] = now
-        que.append(n1)
+    for nextnode in [n1,n2,n3] :
+        if 0 <= nextnode < maxnum and timelist[nextnode] == -2 :
+            timelist[nextnode] = timelist[now] + 1
+            beforelist[nextnode] = now
+            que.append(nextnode)
 
-    if n2 < maxnum and timelist[n2] == -2 :
-        timelist[n2] = timelist[now] + 1
-        beforelist[n2] = now
-        que.append(n2)
-
-    if n3 >= 0 and timelist[n3] == -2 :
-        timelist[n3] = timelist[now] + 1
-        beforelist[n3] = now
-        que.append(n3)
+    # if n1 < maxnum and timelist[n1] == -2 :
+    #     timelist[n1] = timelist[now] + 1
+    #     beforelist[n1] = now
+    #     que.append(n1)
+    #
+    # if n2 < maxnum and timelist[n2] == -2 :
+    #     timelist[n2] = timelist[now] + 1
+    #     beforelist[n2] = now
+    #     que.append(n2)
+    #
+    # if n3 >= 0 and timelist[n3] == -2 :
+    #     timelist[n3] = timelist[now] + 1
+    #     beforelist[n3] = now
+    #     que.append(n3)
 
 print(timelist[k])
 
