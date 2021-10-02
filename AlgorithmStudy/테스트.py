@@ -37,4 +37,8 @@ else :
     gibondict['e'] = 30
 print(gibondict)
 
+gibondict.get('c').append(20)
+
+print(gibondict.get('c'))
+
 
