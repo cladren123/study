@@ -22,8 +22,13 @@ n = int(input())
 
 graph = [[] for _ in range(n+1)];
 
+# 입력받은 가중치를 담은 함수
 weight = [0] * (n+1)
+
+# 확인용
+# maxweight : 각 노드의 가장 큰 지름
 maxweight = [0] * (n+1)
+# maxworth : 부모 노드한테 보내는 가장 큰 가중치
 maxworth = [0] * (n+1)
 
 for _ in range(n-1) :
@@ -47,10 +52,13 @@ def dfs(node) :
         for nextnode in graph[node] :
             weightlist.append(dfs(nextnode));
 
+        # 내림차순 정렬로 인해 가증 큰 값을 찾는다.
         weightlist.sort(reverse=True)
 
+        # 자식 노드가 2개 이상일 때 가장 큰 두개의 합을 구한다.
         if len(weightlist) >= 2 :
             checksum = weightlist[0] + weightlist[1]
+        # 자식 노드가 하나일 때
         else :
             checksum = weightlist[0]
 
