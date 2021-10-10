@@ -26,6 +26,7 @@ for _ in range(n) :
 dx = [1,0,-1,0]
 dy = [0,-1,0,1]
 
+# 국경을 허문다음 인구이동을 한다
 def bfs(i,j,visited,board) :
     que = deque()
     que.append([i,j])
@@ -57,21 +58,24 @@ def bfs(i,j,visited,board) :
         for y,x in group :
             board[y][x] = ingu
 
+# 인구를 이동시킨다
 def movement() :
     global board
 
+    # 방문 여부 표시 리스트
     visited = [[0] * n for _ in range(n)]
 
     que = deque()
 
     newboard = copy.deepcopy(board)
 
+
     for i in range(n) :
         for j in range(n) :
             if visited[i][j] == 0 :
                 bfs(i,j,visited,board)
 
-
+    # 인구 이동이 없다면 종료한다.
     if newboard == board :
         return -1
     else :
