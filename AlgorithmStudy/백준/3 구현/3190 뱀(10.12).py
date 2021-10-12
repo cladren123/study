@@ -41,6 +41,7 @@ body.append([1,1])
 # 처음 시작 방향 오른쪽
 d = 0
 
+# 시간을 센다
 answer = 0
 
 while True :
@@ -52,10 +53,13 @@ while True :
 
     answer += 1
 
+    # 범위안에서, 몸이 아니면 이동한다
     if 1 <= nhy < (n+1) and 1 <= nhx < (n+1) and [nhy,nhx] not in body:
+        # 사과가 있으면 몸이 늘어나고 0으로 바꾼다.
         if board[nhy][nhx] == 1 :
             body.appendleft([nhy,nhx])
             board[nhy][nhx] = 0
+        # 사과가 없으면 이동
         else :
             body.appendleft([nhy,nhx])
             body.pop()
@@ -78,13 +82,3 @@ while True :
             llist.popleft()
 
 print(answer)
-
-
-
-
-
-
-
-
-
-
