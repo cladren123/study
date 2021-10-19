@@ -18,6 +18,7 @@ input = sys.stdin.readline
 
 board = []
 
+# 입력단
 for _ in range(12) :
     one = input().strip()
     one = list(one)
@@ -36,7 +37,7 @@ dy = [0,-1,0,1]
 
 answer = 0
 
-# 상하좌우로 4개 있으면 폭발
+
 def bombmodul() :
     global answer
     que = deque()
@@ -44,6 +45,7 @@ def bombmodul() :
     flag = 0
     bomblist = []
 
+    # 상하좌우로 4개 있으면 폭발
     for y in range(12) :
         for x in range(6) :
             if board[y][x] != "." and visited[y][x] == 0 :
@@ -68,6 +70,7 @@ def bombmodul() :
                 if len(bomb) >= 4 :
                     bomblist = bomblist + bomb
 
+    # 폭발이 일어나면 flag = 1을 반환해 다음에도 폭발을 진행하게 한다.
     if len(bomblist) >= 1 :
         flag = 1
         answer += 1
@@ -112,18 +115,3 @@ while flag :
     flag = bombmodul()
 
 print(answer)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
