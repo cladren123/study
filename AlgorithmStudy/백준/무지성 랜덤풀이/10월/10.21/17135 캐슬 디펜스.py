@@ -27,22 +27,15 @@ for _ in range(n) :
 answer = 0
 
 visited = [0] * m
-used = [0] * m
 
-def dfs(stage) :
+def dfs(stage, hubo) :
     # 종단조건
     if stage == 3 :
-        print(used)
         pass
 
-    for i in range(m) :
-        if visited[i] == 0 :
-            visited[i] = 1
-            used[stage] = i
-            dfs(stage+1)
-            visited[i] = 0
 
-dfs(0)
+
+
 
 
 
